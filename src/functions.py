@@ -134,8 +134,14 @@ def get_atc_positions() -> list:
     with open(filepath, 'r') as file:
         lines = file.readlines()
 
-    for line in lines:
-        if ';' not in line and line != '\n':
+    adjoining_fir_lines = 1000
+    for index, line in enumerate(lines):
+        if line.__contains__('adjoining FIRs'):
+            adjoining_fir_lines = index
+            print("Adjoining FIR = {}".format(adjoining_fir_lines))
+
+    for index, line in enumerate(lines):
+        if ';' not in line and line != '\n' and index < adjoining_fir_lines:
             position = line.split(":")
             name = position[0]
             callsign = "{}_{}".format(position[5], position[6])
