@@ -9,3 +9,5 @@ AFV_API_SERVER_BACKUP = "https://voice2.vatsim.uk/api"
 AFV_API_VERSION = "1"
 AFV_API_POST_URL = "network/online/callsigns"
 
+CONTROLLER_SUFFIXES = {"DEL", "GND", "APP", "DEP", "CTR", "FSS"}
+
