@@ -96,7 +96,7 @@ def add_controller_coordinates(afv_json: json) -> None:
             if len(transceivers) > 0:
                 transceiver = client.get('transceivers')[0]
                 agl = transceiver['heightAglM']
-                if agl < 50:
+                if agl < 100:
                     latitude = transceiver['latDeg']
                     longitude = transceiver['lonDeg']
                     AfvClient(callsign, latitude, longitude, agl)
@@ -115,11 +115,10 @@ def get_vatsim_controllers():
         server = controller['server']
         visual_range = controller['visual_range']
         logon_time = controller['logon_time']
-        # noinspection PyUnusedLocal
-        vatsim_controller = VatsimController(vatsim_id, name, callsign,
-                                             frequency, facility,
-                                             rating, server, visual_range,
-                                             logon_time)
+        VatsimController(vatsim_id, name, callsign,
+                         frequency, facility,
+                         rating, server, visual_range,
+                         logon_time)
 
 
 def is_point_in_polygon(point: tuple) -> bool:
@@ -132,7 +131,6 @@ def get_atc_positions() -> list:
     atc_positions = []
     directory = '{}/resources'.format(constants.ROOT_DIR)
     filepath = os.path.join(directory, 'vrc.pof')
-    print(filepath)
     with open(filepath, 'r') as file:
         lines = file.readlines()
 
@@ -141,8 +139,7 @@ def get_atc_positions() -> list:
             position = line.split(":")
             name = position[0]
             callsign = "{}_{}".format(position[5], position[6])
-            atc_position = AtcPosition(name, callsign)
+            AtcPosition(name, callsign)
             atc_positions.append(callsign)
-            # print(callsign)
 
     return atc_positions

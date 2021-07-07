@@ -44,9 +44,13 @@ class AfvClient:
 
     @staticmethod
     def get_callsign_position(callsign: str) -> tuple:
+        """Returns the lat, long of the controller"""
         for client in AfvClient.afv_clients:
-            if client[0] == callsign:
-                return client[1], client[2]
+            afv_callsign = client[0]
+            afv_latitude = client[1]
+            afv_longitude = client[2]
+            if afv_callsign == callsign:
+                return afv_latitude, afv_longitude
 
 
 class AtcPosition:
