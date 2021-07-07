@@ -14,21 +14,7 @@ class VatsimController:
         self.visual_range = visual_range
         self.logon_time = logon_time
 
-        controller_as_list = (
-            self.vatsim_id, self.name, self.callsign, self.frequency,
-            self.facility, self.rating, self.server, self.visual_range,
-            self.logon_time)
-
-        if controller_as_list not in VatsimController.vatsim_controllers:
-            VatsimController.vatsim_controllers.append((self.vatsim_id,
-                                                        self.name,
-                                                        self.callsign,
-                                                        self.frequency,
-                                                        self.facility,
-                                                        self.rating,
-                                                        self.server,
-                                                        self.visual_range,
-                                                        self.logon_time))
+        VatsimController.vatsim_controllers.append(self)
 
     def get_position(self) -> tuple:
         """

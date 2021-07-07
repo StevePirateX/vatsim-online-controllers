@@ -1,11 +1,14 @@
 import constants
 from classes import AfvClient
+from classes import VatsimController
 import os
 import configparser
 import random
 import json
 import requests
 import datetime
+import matplotlib.path as mplpath
+import ast
 
 afv_refresh_time = datetime.datetime.now()
 
@@ -18,41 +21,50 @@ def import_config(filename: str) -> None:
     :return: None
     """
     config_file_path = os.path.join(constants.ROOT_DIR, filename)
-    if not os.path.exists(filename):
-        print("'{}' not found. Creating default".format(filename))
+    print("Loading config at {}".format(config_file_path))
+    if not os.path.exists(config_file_path):
+        print("'{}' not found. Creating default".format(config_file_path))
         config_file = open(config_file_path, 'w')
 
-        config = configparser.ConfigParser()
-        config.add_section('General')
-        config.set('General', 'vatsim_online_data_url',
-                   constants.VATSIM_ONLINE_URL)
+        config_w = configparser.ConfigParser()
+        config_w.add_section('General')
+        config_w.set('General', 'vatsim_online_data_url',
+                     constants.VATSIM_ONLINE_URL)
+        config_w.set('General', 'controller_filter_area',
+                     '{!r}'.format(constants.POLYGON))
 
-        config.add_section('Audio For VATSIM')
-        config.set('Audio For VATSIM', 'api_server', constants.AFV_API_SERVER)
-        config.set('Audio For VATSIM', 'api_server_backup',
-                   constants.AFV_API_SERVER_BACKUP)
-        config.set('Audio For VATSIM', 'api_version',
-                   constants.AFV_API_VERSION)
-        config.set('Audio For VATSIM', 'api_post_url',
-                   constants.AFV_API_POST_URL)
+        config_w.add_section('Audio For VATSIM')
+        config_w.set('Audio For VATSIM', 'api_server',
+                     constants.AFV_API_SERVER)
+        config_w.set('Audio For VATSIM', 'api_server_backup',
+                     constants.AFV_API_SERVER_BACKUP)
+        config_w.set('Audio For VATSIM', 'api_version',
+                     constants.AFV_API_VERSION)
+        config_w.set('Audio For VATSIM', 'api_post_url',
+                     constants.AFV_API_POST_URL)
 
-        config.write(config_file)
+        config_w.write(config_file)
         config_file.close()
 
     with open(config_file_path, 'r') as file:
-        config = configparser.RawConfigParser(allow_no_value=True)
-        config.read_file(file)
+        config_r = configparser.RawConfigParser(allow_no_value=True)
+        config_r.read_file(file)
 
-    if config.has_option('General', 'chores_to_generate'):
-        constants.VATSIM_ONLINE_URL = config.get('General',
-                                                 'vatsim_online_data_url')
-        constants.AFV_API_SERVER = config.get('Audio For VATSIM', 'api_server')
-        constants.AFV_API_SERVER_BACKUP = config.get('Audio For VATSIM',
-                                                     'api_server_backup')
-        constants.AFV_API_VERSION = config.get('Audio For VATSIM',
-                                               'api_version')
-        constants.AFV_API_POST_URL = config.get('Audio For VATSIM',
-                                                'api_post_url')
+        if config_r.has_option('General', 'vatsim_online_data_url'):
+            constants.VATSIM_ONLINE_URL = config_r.get('General',
+                                                       'vatsim_online_data_url'
+                                                       )
+        constants.POLYGON = ast.literal_eval(
+            config_r.get('General', 'controller_filter_area'))
+        constants.AREA = mplpath.Path(constants.POLYGON)
+        constants.AFV_API_SERVER = config_r.get('Audio For VATSIM',
+                                                'api_server')
+        constants.AFV_API_SERVER_BACKUP = config_r.get('Audio For VATSIM',
+                                                       'api_server_backup')
+        constants.AFV_API_VERSION = config_r.get('Audio For VATSIM',
+                                                 'api_version')
+        constants.AFV_API_POST_URL = config_r.get('Audio For VATSIM',
+                                                  'api_post_url')
 
 
 def get_afv_url() -> str:
@@ -87,3 +99,29 @@ def add_controller_coordinates(afv_json: json) -> None:
                     latitude = transceiver['latDeg']
                     longitude = transceiver['lonDeg']
                     AfvClient(callsign, latitude, longitude, agl)
+
+
+def get_vatsim_controllers():
+    controllers = get_json_from_url(constants.VATSIM_ONLINE_URL).get(
+        'controllers')
+    for controller in controllers:
+        vatsim_id = controller['cid']
+        name = controller['name']
+        callsign = controller['callsign']
+        frequency = controller['frequency']
+        facility = controller['facility']
+        rating = controller['rating']
+        server = controller['server']
+        visual_range = controller['visual_range']
+        logon_time = controller['logon_time']
+        # noinspection PyUnusedLocal
+        vatsim_controller = VatsimController(vatsim_id, name, callsign,
+                                             frequency, facility,
+                                             rating, server, visual_range,
+                                             logon_time)
+
+
+def is_point_in_polygon(point: tuple) -> bool:
+    if point is None:
+        point = [0, 0]
+    return constants.AREA.contains_point(point)
