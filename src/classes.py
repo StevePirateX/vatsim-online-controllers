@@ -1,5 +1,6 @@
 class VatsimController:
     """This class defines all the VATSIM clients (pilots and controllers)"""
+    vatsim_controllers = []
 
     def __init__(self, vatsim_id, name, callsign, frequency, facility,
                  rating, server, visual_range, logon_time):
@@ -12,6 +13,22 @@ class VatsimController:
         self.server = server
         self.visual_range = visual_range
         self.logon_time = logon_time
+
+        controller_as_list = (
+            self.vatsim_id, self.name, self.callsign, self.frequency,
+            self.facility, self.rating, self.server, self.visual_range,
+            self.logon_time)
+
+        if controller_as_list not in VatsimController.vatsim_controllers:
+            VatsimController.vatsim_controllers.append((self.vatsim_id,
+                                                        self.name,
+                                                        self.callsign,
+                                                        self.frequency,
+                                                        self.facility,
+                                                        self.rating,
+                                                        self.server,
+                                                        self.visual_range,
+                                                        self.logon_time))
 
     def get_position(self) -> tuple:
         """
