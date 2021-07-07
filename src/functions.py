@@ -1,5 +1,6 @@
 import constants
 from classes import AfvClient
+from classes import AtcPosition
 from classes import VatsimController
 import os
 import configparser
@@ -125,3 +126,23 @@ def is_point_in_polygon(point: tuple) -> bool:
     if point is None:
         point = [0, 0]
     return constants.AREA.contains_point(point)
+
+
+def get_atc_positions() -> list:
+    atc_positions = []
+    directory = '{}/resources'.format(constants.ROOT_DIR)
+    filepath = os.path.join(directory, 'vrc.pof')
+    print(filepath)
+    with open(filepath, 'r') as file:
+        lines = file.readlines()
+
+    for line in lines:
+        if ';' not in line and line != '\n':
+            position = line.split(":")
+            name = position[0]
+            callsign = "{}_{}".format(position[5], position[6])
+            atc_position = AtcPosition(name, callsign)
+            atc_positions.append(callsign)
+            # print(callsign)
+
+    return atc_positions

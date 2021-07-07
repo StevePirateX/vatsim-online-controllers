@@ -1,0 +1,525 @@
+;VATPAC COMBINED AUSTRALIAN ATC POSITION ID FILE::::::::::
+;::::::::::
+;POF file by VATPAC Sector File Team. Based on original file by Mike Evans & David Hendleman.::::::::::
+;Version 5.6 - 2 January 2021.::::::::::
+;::::::::::
+;::::::::::
+;USE THIS FILE TO CREATE UNIQUE STATIC CONTROLLER POSITION ID'S FOR YOUR RADAR CLIENT.::::::::::
+;AMENDING THIS FILE ONLY CHANGES THE WAY CONTROLLERS APPEAR TO YOU, AND DOES NOT AFFECT::::::::::
+;THE WAY OTHER CLIENTS SEE YOU, OR THE WAY THAT THEY SEE OTHER CONTROLLERS.::::::::::
+;::::::::::
+;::::::::::
+;THIS FILE USES THE FOLLOWING FORMAT -->::::::::::
+;NAME:RNAME:FREQ:SECID:ARTSTAG:CALLPREFIX:CALLSUFFIX:LINE1:LINE2:LSQUAWK:HSQUAWK
+;::::::::::
+;NAME = Sector name::::::::::(* = non standard, # = excluded position, if at end of name)
+;RNAME = Radio callsign::::::::::
+;FREQ = Frequency match for this position::::::::::
+;SECID = Sector ID used for handoffs & ATC-ATC comms::::::::::
+;ARTSTAG = Position symbol on the ARTS scope::::::::::
+;CALLPREFIX = Prefix match for this position::::::::::
+;CALLSUFFIX = Suffix match for this position::::::::::
+;LINE1 = First line to display on each key in VSCS::::::::::
+;LINE2 = Second line to display on each key in VSCS::::::::::
+;LSQUAWK = Low end of squawk range for this position::::::::::
+;HSQUAWK = High end of squawk range for this position::::::::::
+;::::::::::
+;::::::::::::::::::::
+;***NOTE:***** ATIS detail is included in this .pof file but must be commented out as ATIS detail is not normally part of a .pof file
+;****VATPAC software reads these lines to produce voice profiles for Euroscope
+;::::::::::::::::::::
+;
+;<============ OCEANIC CONTROL ============>::::::::::
+;::::::::::
+Brisbane Radio (Tasman):Brisbane Radio:128.600:OT:O:BN-TSN:FSS:TSN:OCE:0101:0171
+Brisbane Radio (Howe)*:Brisbane Radio:124.600:HW:O:BN-HWE:FSS:HWE:OCE:0101:0171
+Brisbane Radio (Flinders)*:Brisbane Radio:129.500:FL:O:BN-FLD:FSS:FLD:OCE:0101:0171
+Brisbane Radio (Coral)*:Brisbane Radio:129.600:CO:O:BN-COL:FSS:COL:OCE:0101:0171
+Brisbane Radio (Indian):Brisbane Radio:122.400:ID:O:ML-IND:FSS:IND:OCE:0172:0252
+Brisbane Radio (Indian South)*:Brisbane Radio:123.200:IS:O:ML-INS:FSS:INS:OCE:0172:0252
+Brisbane Radio (Indian East)*:Brisbane Radio:123.650:IE:O:ML-INE:FSS:INE:OCE:0172:0252
+NZ Auckland Oceanic#:Auckland Radio:128.900:AO:O:NZZO:FSS:NZZO:OCE:0253:0311
+FJ Nadi Oceanic:Nadi Radio:123.600:NO:O:NFFF:FSS:NFFF:OCE:0000:0000
+;Commented out as part of NZ airspace
+;PF Tahiti Oceanic:Tahiti Radio:125.500:TO:O:NTTT:FSS:NTTT:OCE:0000:0000
+USA Oakland Oceanic (East)#:San Francisco Radio:131.950:ZE:O:ZAK_E:FSS:ZAK_E:OCE:0000:0000
+USA Oakland Oceanic (West)#:San Francisco Radio:122.500:ZW:O:ZAK_W:FSS:ZAK_W:OCE:0000:0000
+NZ McMurdo Oceanic#:McMurdo Radio:128.700:MO:O:NZCM:FSS:NZCM:OCE:0000:0000
+
+;::::::::::
+;::::::::::
+;<============ YMMM MELBOURNE FIR ============>::::::::::
+;::::::::::
+;    MELBOURNE CENTRE SECTORS::::::::::
+;::::::::::
+Melbourne Centre (Upper):Melbourne Centre:132.400:MU:C:YMMM:FSS:-:YMMM:3601:3671
+Melbourne Centre (Bindook)*:Melbourne Centre:129.800:BI:C:ML-BIK:CTR:-:BIK:3232:3270
+Melbourne Centre (Katomba)*:Melbourne Centre:133.500:KA:C:ML-KAT:CTR:-:KAT:3232:3270
+Melbourne Centre (Wollongong):Melbourne Centre:125.000:WO:C:ML-WOL:CTR:-:WOL:3232:3270
+Melbourne Centre (Bourke):Melbourne Centre:128.200:BE:C:ML-BKE:CTR:-:BKE:3271:3280
+Melbourne Centre (Woomera)*:Melbourne Centre:132.800:WM:C:ML-WRA:CTR:-:WRA:3271:3280
+Melbourne Centre (Griffith)*:Melbourne Centre:122.750:GF:C:ML-GTH:CTR:-:GTH:3271:3280
+Melbourne Centre (Snowy):Melbourne Centre:124.000:SN:C:ML-SNO:CTR:-:SNO:3121:3180
+Melbourne Centre (Yarrowee)*:Melbourne Centre:134.320:YW:C:ML-YWE:CTR:-:YWE:3121:3180
+Melbourne Centre (Eildon Weir)*:Melbourne Centre:123.750:EL:C:ML-ELW:CTR:-:ELW:3121:3180
+Melbourne Centre (Wonthaggi)*:Melbourne Centre:135.300:WN:C:ML-WON:CTR:-:WON:3121:3180
+Melbourne Centre (Hume)*:Melbourne Centre:132.200:HU:C:ML-HUM:CTR:-:HUM:3121:3180
+Melbourne Centre (Tasmania):Melbourne Centre:123.800:TS:C:ML-TAS:CTR:-:TAS:3301:3336
+Melbourne Centre (Tailem Bend):Melbourne Centre:125.300:TB:C:ML-TBD:CTR:-:TBD:3346:3365
+Melbourne Centre (Augusta)*:Melbourne Centre:127.050:AU:C:ML-AUG:CTR:-:AUG:3346:3365
+Melbourne Centre (Mungo)*:Melbourne Centre:132.600:MN:C:ML-MUN:CTR:-:MUN:3346:3365
+Melbourne Centre (Oxley)*:Melbourne Centre:128.500:OL:C:ML-OXL:CTR:-:OXL:3346:3365
+Melbourne Centre (Alice Springs):Melbourne Centre:131.800:AS:C:ML-ASP:CTR:-:ASP:3311:3345
+Melbourne Centre (Warburton)*:Melbourne Centre:124.900:WR:C:ML-WAR:CTR:-:WAR:3311:3345
+Melbourne Centre (Forest)*:Melbourne Centre:132.700:FO:C:ML-FOR:CTR:-:FOR:3311:3345
+Melbourne Centre (Esperance):Melbourne Centre:123.950:ES:C:ML-ESP:CTR:-:ESP:3446:3501
+Melbourne Centre (Leeman)*:Melbourne Centre:122.400:LE:C:ML-LEA:CTR:-:LEA:3446:3501
+Melbourne Centre (Grove)*:Melbourne Centre:133.800:GV:C:ML-GVE:CTR:-:GVE:3446:3501
+Melbourne Centre (Pingelly)*:Melbourne Centre:133.900:PI:C:ML-PIY:CTR:-:PIY:3446:3501
+Melbourne Centre (Cross)*:Melbourne Centre:135.800:CR:C:ML-CRS:CTR:-:CRS:3446:3501
+Melbourne Centre (Hyden)*:Melbourne Centre:118.200:HY:C:ML-HYD:CTR:-:HYD:3446:3501
+Melbourne Centre (Jarrah)*:Melbourne Centre:120.300:JA:C:ML-JAR:CTR:-:JAR:3446:3501
+Melbourne Centre (Morris)*:Melbourne Centre:133.700:MR:C:ML-MOR:CTR:-:MOR:3446:3501
+Melbourne Centre (Telfer)*:Melbourne Centre:125.400:TF:C:ML-TFR:CTR:-:TFR:3446:3501
+Melbourne Centre (Geraldton)*:Melbourne Centre:134.200:GL:C:ML-GEL:CTR:-:GEL:3501:3545
+Melbourne Centre (Billabong)*:Melbourne Centre:132.000:BB:C:ML-BIL:CTR:-:BIL:3501:3545
+Melbourne Centre (Ore):Melbourne Centre:127.000:OR:C:ML-ORE:CTR:-:ORE:3501:3545
+
+
+
+
+
+
+;::::::::::
+;::::::::::
+;    MELBOURNE TMA::::::::::
+;::::::::::
+Melbourne Approach (East):Melbourne Approach:132.000:MA:A:ML:APP:ML:APP:3010:3220
+Melbourne Departures (North)*:Melbourne Departures:118.900:MD:D:ML:DEP:ML:DEP:3001:3120
+Melbourne Departures (South)*:Melbourne Departures:129.400:MS:D:ML-S:DEP:ML-S:DEP:3001:3120
+Melbourne Tower:Melbourne Tower:120.500:MT:T:ML:TWR:ML:TWR:3001:3220
+Melbourne SMC:Melbourne Ground:121.700:MG:-:ML:GND:ML:GND:3045:3102
+Melbourne Clearance Delivery:Melbourne Delivery:127.200:MC:-:ML:DEL:ML:DEL:3102:3214
+Essendon Tower:Essendon Tower:125.100:EN:T:EN:TWR:EN:TWR:3546:3577
+Essendon SMC:Essendon Ground:121.900:EG:-:EN:GND:EN:GND:3546:3570
+Moorabbin Tower:Moorabbin Tower:118.100:MB:T:MB:TWR:MB:TWR:3546:3601
+Moorabbin SMC:Moorabbin Ground:119.900:MZ:-:MB:GND:MB:GND:3546:3601
+Avalon Tower:Avalon Tower:120.100:AV:T:AV:TWR:AV:TWR:3012:3219
+Avalon SMC:Avalon Ground:129.300:AG:-:AV:GND:AV:GND:3012:3219
+;::::::::::
+;Avalon ATIS:AV:118.200:YMAV:ATIS
+;Essendon ATIS:EN:119.800:YMEN:ATIS
+;Melbourne ATIS:ML:118.000:YMML:ATIS
+;Moorabbin ATIS:MB:120.900:YMMB:ATIS
+;::::::::::
+;::::::::::
+;    EAST SALE (RAAF)::::::::::
+;::::::::::
+East Sale Approach:East Sale Approach:123.300:YA:A:ES:APP:ES:APP:6001:6036
+East Sale Tower:East Sale Tower:118.300:YT:T:ES:TWR:ES:TWR:6001:6036
+East Sale SMC:East Sale Ground:127.250:YG:-:ES:GND:ES:GND:6001:6036
+East Sale Clearance Delivery:East Sale Delivery:133.600:YC:-:ES:DEL:ES:DEL:6001:6036
+;::::::::::
+;East Sale ATIS:ES:125.400:YMES:ATIS
+;::::::::::
+;::::::::::
+;    SYDNEY TMA::::::::::
+;::::::::::
+Sydney Approach North:Sydney Approach:124.400:SA:A:SY:APP:SY:APP:4010:4120
+Sydney Approach (South)*:Sydney Approach:128.300:SS:A:SY-S:APP:SY-S:APP:4001:4102
+Sydney Director (West)*:Sydney Director:126.100:SF:D:SY-D:APP:SY-D:APP:4001:4104
+Sydney Director (East)*:Sydney Director:125.300:SE:D:SY-DE:APP:SY-DE:APP:4001:4104
+Sydney Departures (North)*:Sydney Departures:123.000:SP:P:SY:DEP:SY:DEP:4020:4120
+Sydney Departures (South)*:Sydney Departures:129.700:SQ:P:SY-S:DEP:SY-S:DEP:4020:4120
+Sydney Tower:Sydney Tower:120.500:ST:T:SY:TWR:SY:TWR:4451:4520
+Sydney Tower (East)*:Sydney Tower:124.700:SZ:T:SY-E:TWR:SY-E:TWR:4451:4520
+Sydney SMC:Sydney Ground:126.500:SG:-:SY:GND:SY:GND:4451:4520
+Sydney SMC (East)*:Sydney Ground:121.700:SX:-:SY-E:GND:SY-E:GND:4451:4520
+Sydney Clearance Delivery:Sydney Delivery:133.800:SC:-:SY:DEL:SY:DEL:4453:4561
+;Sydney Centre Kings Tableland:Sydney Centre:124.550:KTL:-:SY:RIS:SY:RIS:0:0
+;Sydney Centre Woronora:Sydney Centre:125.800:WOR:-:SY:RIS:SY:RIS:0:0
+Bankstown Tower:Bankstown Tower:132.800:BK:T:BK:TWR:BK:TWR:4562:4662
+Bankstown SMC:Bankstown Ground:119.900:BZ:-:BK:GND:BK:GND:4562:4662
+Camden Tower:Camden Tower:120.100:CN:T:CN:TWR:CN:TWR:4571:4642
+Camden SMC:Camden Ground:121.900:CZ:-:CN:GND:CN:GND:4571:4642
+Richmond Tower:Richmond Tower:135.500:RI:T:RI:TWR:RI:TWR:6201:6236
+Richmond SMC:Richmond Ground:128.250:RG:-:RI:GND:RI:GND:6201:6236
+;::::::::::
+;Bankstown ATIS:BK:120.900:YSBK:ATIS
+;Camden ATIS:CN:125.100:YSCN:ATIS
+;Richmond ATIS:RI:126.300:YSRI:ATIS
+;Sydney ATIS:SY:126.250:YSSY:ATIS
+;::::::::::
+;::::::::::
+;    NOWRA (NAS)::::::::::
+;::::::::::
+Nowra Approach:Nowra Approach:123.500:NA:A:NW:APP:NW:APP:6037:6077
+Nowra Tower:Nowra Tower:118.850:NW:T:NW:TWR:NW:TWR:6037:6077
+Nowra SMC:Nowra Ground:135.850:NG:-:NW:GND:NW:GND:6037:6077
+Nowra Clearance Delivery:Nowra Delivery:128.350:ND:-:NW:DEL:NW:DEL:6037:6077
+;::::::::::
+;Nowra ATIS:NW:125.650:YSNW:ATIS
+;::::::::::
+;::::::::::
+;    CANBERRA TMA::::::::::
+;::::::::::
+Canberra Approach (East):Canberra Approach:124.500:CA:A:CB:APP:CB:APP:2106:2205
+Canberra Approach (West)*:Canberra Approach:125.900:CW:A:CB-W:APP:CB-W:APP:2106:2205
+Canberra Tower:Canberra Tower:118.700:CT:T:CB:TWR:CB:TWR:2110:2243
+Canberra SMC:Canberra Ground:121.700:CG:-:CB:GND:CB:GND:2115:2243
+;::::::::::
+;Canberra ATIS:CB:127.450:YSCB:ATIS
+;::::::::::
+;::::::::::
+;    ALBURY::::::::::
+;::::::::::
+Albury Tower:Albury Tower:123.250:AY:T:AY:TWR:AY:TWR:2245:2302
+Albury SMC:Albury Ground:121.800:AB:-:AY:GND:AY:GND:2245:2302
+;::::::::::
+;Albury ATIS:AY:133.850:YMAY:ATIS
+;::::::::::
+;::::::::::
+;    HOBART::::::::::
+;::::::::::
+Hobart Tower:Hobart Tower:118.100:HB:T:HB:TWR:HB:TWR:2303:2421
+Hobart SMC:Hobart Ground:121.700:HG:-:HB:GND:HB:GND:2303:2421
+;::::::::::
+;Hobart ATIS:HB:128.450:YMHB:ATIS
+;::::::::::
+;::::::::::
+;    LAUNCESTON::::::::::
+;::::::::::
+Launceston Tower:Launy Tower:118.700:LT:T:LT:TWR:LT:TWR:2422:2535
+;::::::::::
+;Launceston ATIS:LT:134.750:YMLT:ATIS
+;::::::::::
+;::::::::::
+;    ALICE SPRINGS::::::::::
+;::::::::::
+Alice Springs Tower:Alice Tower:118.300:A1:T:AS:TWR:AS:TWR:2536:2645
+;::::::::::
+;Alice Springs ATIS:AS:123.000:YBAS:ATIS
+;::::::::::
+;::::::::::
+;    ADELAIDE TMA::::::::::
+;::::::::::
+Adelaide Approach (West):Adelaide Approach:124.200:AA:A:AD:APP:AD:APP:1001:1100
+Adelaide Approach (East)*:Adelaide Approach:118.200:AE:A:AD:DEP:AD:DEP:1001:1100
+Adelaide Tower:Adelaide Tower:120.500:AT:T:AD:TWR:AD:TWR:1001:1100
+Adelaide SMC:Adelaide Ground:121.700:AL:-:AD:GND:AD:GND:1001:1100
+Adelaide Clearance Delivery:Adelaide Delivery:126.100:AD:-:AD:DEL:AD:DEL:1001:1100
+Edinburgh Tower:Edinburgh Tower:118.300:ED:T:ED:TWR:ED:TWR:6101:6136
+Edinburgh SMC:Edinburgh Ground:134.100:E2:-:ED:GND:ED:GND:6101:6136
+Parafield Tower:Parafield Tower:118.700:PF:T:PF:TWR:PF:TWR:1131:1177
+Parafield SMC:Parafield Ground:119.900:FG:-:PF:GND:PF:GND:1131:1177
+;::::::::::
+;Adelaide ATIS:AD:134.500:YPAD:ATIS
+;Edinburgh ATIS:ED:126.250:YPED:ATIS
+;Parafield ATIS:PF:120.900:YPPF:ATIS
+;::::::::::
+;::::::::::
+;    WOOMERA (RAAF)::::::::::
+;::::::::::
+Woomera Tower:Woomera Tower:118.300:W1:T:WR:TWR:WR:TWR:6137:6177
+;::::::::::
+;Woomera ATIS:WR:134.000:YPWR:ATIS
+;::::::::::
+;    PERTH TMA::::::::::
+;::::::::::
+Perth Approach:Perth Approach:123.600:PA:A:PH:APP:PH:APP:4621:4660
+Perth Departures*:Perth Departures:118.700:PD:D:PH:DEP:PH:DEP:4621:4660
+Perth Tower:Perth Tower:127.400:PT:T:PH:TWR:PH:TWR:4621:4660
+Perth SMC:Perth Ground:121.700:PG:-:PH:GND:PH:GND:4621:4660
+Perth SMC (East)*:Perth Ground:122.200:PX:-:PH-E:GND:PH-E:GND:4621:4660
+Perth Clearance Delivery:Perth Delivery:118.550:PC:-:PH:DEL:PH:DEL:4621:4660
+Jandakot Tower:Jandakot Tower:118.100:JT:T:JT:TWR:JT:TWR:4661:4677
+Jandakot SMC:Jandakot Ground:124.300:JG:-:JT:GND:JT:GND:4661:4677
+Pearce Approach:Pearce Approach:130.200:PE:A:PEA:APP:PEA:APP:6237:6277
+Pearce Tower:Pearce Tower:118.300:XT:T:PEA:TWR:PEA:TWR:6237:6277
+Pearce SMC:Pearce Ground:127.250:XG:-:PEA:GND:PEA:GND:6237:6277
+Pearce Clearance Delivery:Pearce Delivery:134.100:XC:-:PEA:DEL:PEA:DEL:6237:6277
+Gingin Tower:Gingin Tower:118.500:G1:T:GIG:TWR:GIG:TWR:6301:6336
+;::::::::::
+;GinGin ATIS:GIG:134.500:YGIG:ATIS
+;Jandakot ATIS:JT:128.650:YPJT:ATIS
+;Pearce ATIS:PEA:134.000:YPEA:ATIS
+;Perth ATIS:PH:123.800:YPPH:ATIS
+;::::::::::
+;::::::::::
+;    KARRATHA::::::::::
+;::::::::::
+Karratha Tower:Karratha Tower:127.350:KK:T:KA:TWR:KA:TWR:4701:4736
+Karratha SMC:Karratha Ground:123.550:KG:-:KA:GND:KA:GND:4701:4736
+;::::::::::
+;Karratha ATIS:KA:134.550:YPKA:ATIS
+;::::::::::
+;::::::::::
+;<============ YBBB BRISBANE FIR ============>::::::::::
+;::::::::::
+;::::::::::
+;    BRISBANE CENTRE SECTORS::::::::::
+;::::::::::
+Brisbane Centre (Downs):Brisbane Centre:135.600:DO:C:BN-DOS:CTR:-:DOS:4344:4424
+Brisbane Centre (Grafton)*:Brisbane Centre:120.300:GN:C:BN-GRN:CTR:-:GRN:4344:4424
+Brisbane Centre (Burnett)*:Brisbane Centre:123.000:BR:C:BN-BUR:CTR:-:BUR:4344:4424
+Brisbane Centre (Keppel)*:Brisbane Centre:125.900:KP:C:BN-KPL:CTR:-:KPL:4344:4424
+Brisbane Centre (Straddy)*:Brisbane Centre:134.400:SD:C:BN-SDY:CTR:-:SDY:4344:4424
+Brisbane Centre (Arafura):Brisbane Centre:133.700:AR:C:BN-ARA:CTR:-:ARA:4244:4280
+Brisbane Centre (Isa):Brisbane Centre:125.200:IA:C:BN-ISA:CTR:-:ISA:4301:4320
+Brisbane Centre (Warrego)*:Brisbane Centre:132.450:WG:C:BN-WEG:CTR:-:WEG:4301:4320
+Brisbane Centre (Tabletop):Brisbane Centre:120.550:TP:C:BN-TBP:CTR:-:TBP:4321:4340
+Brisbane Centre (Barra)*:Brisbane Centre:123.800:BA:C:BN-BAR:CTR:-:BAR:4321:4340
+Brisbane Centre (Kennedy)*:Brisbane Centre:120.150:KE:C:BN-KEN:CTR:-:KEN:4321:4340
+Brisbane Centre (Swampy)*:Brisbane Centre:133.200:SW:C:BN-SWY:CTR:-:SWY:4321:4340
+Brisbane Centre (Territory):Brisbane Centre:133.200:TR:C:BN-TRT:CTR:-:TRT:4281:4343
+Brisbane Centre (Kimberley)*:Brisbane Centre:133.400:KI:C:BN-KIY:CTR:-:KIY:4281:4343
+Brisbane Centre (Sturt)*:Brisbane Centre:134.400:SR:C:BN-STR:CTR:-:STR:4281:4343
+Brisbane Centre (Mudgee):Brisbane Centre:133.000:ME:C:BN-MDE:CTR:-:MDE:4121:4180
+Brisbane Centre (Carnarvon)*:Brisbane Centre:133.800:CV:C:BN-CVN:CTR:-:CVN:4121:4180
+Brisbane Centre (Armadale)*:Brisbane Centre:130.900:AM:C:BN-ARM:CTR:-:ARM:4121:4180
+Brisbane Centre (Maitland)*:Brisbane Centre:132.350:MI:C:BN-MLD:CTR:-:MLD:4121:4180
+Brisbane Centre (Ocean)*:Brisbane Centre:133.600:OC:C:BN-OCN:CTR:-:OCN:4121:4180
+Brisbane Centre (Upper):Brisbane Centre:132.100:BU:C:YBBB:FSS:-:YBBB:4601:4671
+;::::::::::
+;::::::::::
+;    BRISBANE TMA::::::::::
+;    ::::::::::
+; Note: Due to the proximity of Brisbane, Brisbane/Gold Coast & Amberley Approach, plus :::::::::
+; Archerfield tower, these positions have been allocated the following ARTS Tag to clearly ::::::::::
+; indicate ownership of aircraft: Brisbane App 'A', Amberley App 'X', Brisbane/Gold Coast :::::::::
+; App 'Y', Archerfield Twr 'Z'.::::::::::
+;::::::::::
+Brisbane Approach (North):Brisbane Approach:124.700:BP:A:BN:APP:BN:APP:1411:1525
+Brisbane Approach (South)*:Brisbane Approach:125.600:BS:A:BN-S:APP:BN-S:APP:1411:1525
+Brisbane Departures (North)*:Brisbane Departures:133.450:BD:D:BN:DEP:BN:DEP:1420:1477
+Brisbane Departures (South)*:Brisbane Departures:118.450:BL:D:BN-S:DEP:BN:DEP:1420:1477
+Brisbane Finals*:Brisbane Finals:119.250:BF:A:BN-F:APP:BN-F:APP:1411:1525
+Brisbane Tower:Brisbane Tower:120.500:BT:T:BN:TWR:BN:TWR:1428:1523
+Brisbane Tower (West)*:Brisbane Tower:118.000:BW:T:BN-W:TWR:BN-W:TWR:1428:1523
+Brisbane SMC:Brisbane Ground:121.700:BG:-:BN:GND:BN:GND:1415:1524
+Brisbane SMC (South)*:Brisbane Ground:122.250:BX:-:BN-S:GND:BN-S:GND:1415:1524
+Brisbane SMC (North)*:Brisbane Ground:124.050:BN:-:BN-N:GND:BN-N:GND:1415:1524
+Brisbane Clearance Delivery:Brisbane Delivery:118.850:BC:-:BN:DEL:BN:DEL:1415:1520
+Brisbane Approach (Gold Coast):Brisbane Approach:123.500:CL:Y:CG:APP:CG:APP:1526:1562
+Gold Coast Tower:Gold Coast Tower:118.700:GT:T:CG:TWR:CG:TWR:1535:1560
+Gold Coast SMC:Gold Coast Ground:121.800:GG:-:CG:GND:CG:GND:1540:1555
+Gold Coast Clearance Delivery:Gold Coast Delivery:128.750:GD:-:CG:DEL:CG:DEL:1540:1555
+Sunshine Coast Tower:Sunshine Coast Tower:124.400:SU:T:SU:TWR:SU:TWR:1602:1652
+Sunshine Coast SMC:Sunshine Coast Ground:121.100:S1:-:SU:GND:SU:GND:1605:1652
+Amberley Approach:Amberley Approach:126.200:QA:X:AMB:APP:AMB:APP:6401:6436
+Amberley Tower:Amberley Tower:118.300:QT:T:AMB:TWR:AMB:TWR:6401:6436
+Amberley SMC:Amberley Ground:129.350:QG:-:AMB:GND:AMB:GND:6401:6436
+Amberley Clearance Delivery:Amberley Delivery:134.600:QC:-:AMB:DEL:AMB:DEL:6401:6436
+Archerfield Tower:Archer Tower:118.100:AF:Z:AF:TWR:AF:TWR:1653:1675
+Archerfield SMC:Archer Ground:119.900:A2:-:AF:GND:AF:GND:1655:1672
+Oakey Approach:Oakey Approach:125.400:OA:A:OK:APP:OK:APP:6437:6477
+Oakey Tower:Oakey Tower:120.100:OK:T:OK:TWR:OK:TWR:6437:6477
+Oakey SMC:Oakey Ground:121.900:OG:-:OK:GND:OK:GND:6437:6477
+;::::::::::
+;Archerfield ATIS:AF:120.900:YBAF:ATIS
+;Amberley ATIS:AMB:123.300:YAMB:ATIS
+;Brisbane ATIS:BN:125.500:YBBN:ATIS
+;Gold Coast ATIS:CG:134.500:YBCG:ATIS
+;Sunshine Coast ATIS:SU:119.800:YBSU:ATIS
+;Oakey ATIS:OK:124.300:YBOK:ATIS
+;::::::::::
+;::::::::::
+;    WILLIAMTOWN (RAAF)::::::::::
+;::::::::::
+Williamtown Approach:Willy Approach:135.700:WA:A:WLM:APP:WLM:APP:6501:6536
+Williamtown Tower:Willy Tower:118.300:WT:T:WLM:TWR:WLM:TWR:6501:6536
+Williamtown SMC:Willy Ground:121.800:W2:-:WLM:GND:WLM:GND:6501:6536
+Williamtown Clearance Delivery:Willy Delivery:130.350:WC:-:WLM:DEL:WLM:DEL:6501:6536
+;::::::::::
+;Williamtown ATIS:WLM:134.450:YWLM:ATIS
+;::::::::::
+;::::::::::
+;    TAMWORTH::::::::::
+;::::::::::
+Tamworth Tower:Tamworth Tower:119.400:TW:T:TW:TWR:TW:TWR:2646:2720
+Tamworth SMC:Tamworth Ground:121.900:TZ:-:TW:GND:TW:GND:2647:2718
+;::::::::::
+;Tamworth ATIS:TW:123.800:YSTW:ATIS
+;::::::::::
+;::::::::::
+;    COFFS HARBOUR::::::::::
+;::::::::::
+Coffs Harbour Tower:Coffs Tower:118.200:CF:T:CFS:TWR:CFS:TWR:2721:2777
+;::::::::::
+;Coffs Harbour ATIS:CFS:130.300:YCFS:ATIS
+;::::::::::
+;::::::::::
+;    ROCKHAMPTON::::::::::
+;::::::::::
+Rockhampton Tower:Rocky Tower:118.100:RK:T:RK:TWR:RK:TWR:3622:3650
+Rockhampton SMC:Rocky Ground:121.800:RN:-:RK:GND:RK:GND:3622:3650
+;::::::::::
+;Rockhampton ATIS:RK:128.500:YBRK:ATIS
+;::::::::::
+;::::::::::
+;    MACKAY::::::::::
+;::::::::::
+Mackay Tower:Mackay Tower:124.500:MK:T:MK:TWR:MK:TWR:3651:3720
+Mackay SMC:Mackay Ground:121.700:MX:-:MK:GND:MK:GND:3651:3720
+;::::::::::
+;Mackay ATIS:MK:128.000:YBMK:ATIS
+;::::::::::
+;::::::::::
+;    HAMILTON ISLAND::::::::::
+;::::::::::
+Hamilton Island Tower:Hamilton Tower:118.700:HM:T:HM:TWR:HM:TWR:3721:3771
+;::::::::::
+;Hamilton Island ATIS:HM:128.350:YBHM:ATIS
+;::::::::::
+;::::::::::
+;    TOWNSVILLE TMA::::::::::
+;::::::::::
+Townsville Approach:Townsville Approach:126.800:TA:A:TL:APP:TL:APP:1251:1277
+Townsville Tower:Townsville Tower:118.300:TT:T:TL:TWR:TL:TWR:1251:1277
+Townsville SMC:Townsville Ground:121.800:TG:-:TL:GND:TL:GND:1251:1277
+Townsville Clearance Delivery:Townsville Delivery:128.100:TC:-:TL:DEL:TL:DEL:1251:1277
+;::::::::::
+;Townsville ATIS:TL:133.500:YBTL:ATIS
+;::::::::::
+;::::::::::
+;    CAIRNS TMA::::::::::
+;::::::::::
+Cairns Approach 1:Cairns Approach:118.400:C1:A:CS:APP:CS:APP:1301:1377
+Cairns Approach 2*:Cairns Approach:126.100:C2:A:CS:DEP:CS:DEP:1301:1377
+Cairns Tower:Cairns Tower:124.900:C6:T:CS:TWR:CS:TWR:1301:1377
+Cairns SMC:Cairns Ground:121.700:C3:-:CS:GND:CS:GND:1301:1377
+Cairns Clearance Delivery:Cairns Delivery:128.750:C4:-:CS:DEL:CS:DEL:1301:1377
+;::::::::::
+;Cairns ATIS:CS:131.100:YBCS:ATIS
+;::::::::::
+;::::::::::
+;    DARWIN TMA::::::::::
+;::::::::::
+Darwin Approach:Darwin Approach:134.100:DA:A:DN:APP:DN:APP:2010:2060
+Darwin Tower:Darwin Tower:133.100:DT:T:DN:TWR:DN:TWR:2010:2060
+Darwin SMC:Darwin Ground:121.800:DG:-:DN:GND:DN:GND:2010:2060
+Darwin Clearance Delivery:Darwin Delivery:126.800:DC:-:DN:DEL:DN:DEL:2010:2060
+;::::::::::
+;Darwin ATIS:DN:128.250:YPDN:ATIS
+;::::::::::
+;::::::::::
+;    TINDAL (RAAF)::::::::::
+;::::::::::
+Tindal Approach:Tindal Approach:120.950:TN:A:TN:APP:TN:APP:6601:6636
+Tindal Tower:Tindal Tower:119.700:T1:T:TN:TWR:TN:TWR:6601:6636
+Tindal SMC:Tindal Ground:135.850:T2:-:TN:GND:TN:GND:6601:6636
+Tindal Clearance Delivery:Tindal Delivery:128.100:T3:-:TN:DEL:TN:DEL:6601:6636
+;::::::::::
+;Tindal ATIS:TN:124.000:YPTN:ATIS
+;::::::::::
+;::::::::::
+;    BROOME::::::::::
+;::::::::::
+Broome Tower:Broome Tower:126.000:B3:T:BRM:TWR:BRM:TWR:4737:4777
+Broome SMC:Broome Ground:121.700:B4:-:BRM:GND:BRM:GND:4737:4777
+;::::::::::
+;Broome ATIS:BRM:128.200:YBRM:ATIS
+;::::::::::
+;::::::::::
+;<============ PACIFIC SECTORS ============>::::::::::
+;::::::::::
+;    PORT MORESBY FIR::::::::::
+;::::::::::
+PNG Port Moresby Centre:Moresby Control:123.400:PM:C:AYPM:CTR:-:AYPM:5501:5577
+;::::::::::
+PNG Port Moresby Approach:Port Moresby Approach:125.800:P2:A:AYPY:APP:AYPY:APP:5521:5556
+PNG Port Moresby Tower:Port Moresby Tower:118.100:P3:T:AYPY:TWR:AYPY:TWR:5501:5536
+PNG Port Moresby SMC:Port Moresby Ground:121.700:P4:-:AYPY:GND:AYPY:GND:5501:5536
+PNG Nadzab (Lae) Approach:Nadzab Approach:118.600:ZA:A:AYNZ:APP:AYNZ:APP:5101:5177
+PNG Nadzab (Lae) Tower:Nadzab Tower:121.700:ZT:T:AYNZ:TWR:AYNZ:TWR:5201:5277
+PNG Wewak Tower:Wekak Tower:118.500:WK:T:AYWK:TWR:AYWK:TWR:5301:5377
+PNG Tokua (Rabul) Tower:Tokua Tower:118.200:TK:T:AYTK:TWR:AYTK:TWR:5401:5477
+PNG Madang Tower:Madang Tower:118.100:M1:T:AYMD:TWR:AYMD:TWR:5501:5577
+PNG Goroka Tower:Goroka Tower:118.700:GA:T:AYGA:TWR:AYGA:TWR:4001:4077
+PNG Mt Hagen Tower:Mt Hagen Tower:120.500:MH:T:AYMH:TWR:AYMH:TWR:4101:4177
+;::::::::::
+;PNG Port Moresby ATIS:AYPY:128.000:AYPY:ATIS
+;PNG Nadzab (Lae) ATIS:AYNZ:128.600:AYNZ:ATIS
+;PNG Wewak ATIS:AYWK:128.200:AYWK:ATIS
+;PNG Tokua (Rabul) ATIS:AYTK:128.000:AYTK:ATIS
+;PNG Madang ATIS:AYMD:127.800:AYMD:ATIS
+;PNG Goroka ATIS:AYGA:134.000:AYGA:ATIS
+;PNG Mt Hagen ATIS:AYMH:128.400:AYMH:ATIS
+;::::::::::
+;::::::::::
+;    NADI FIR::::::::::
+;::::::::::
+FJ Nadi Centre:Nadi Centre:120.900:FC:C:NFFN:CTR:NFFN:CTR:0401:0477
+FJ Nadi Approach:Nadi Approach:119.100:FN:A:NFFN:APP:NFFN:APP:0401:0477
+FJ Nadi Tower:Nadi Tower:118.100:NT:T:NFFN:TWR:NFFN:TWR:0401:0477
+FJ Nausori (Suva) Approach:Nausori Approach:119.700:NP:A:NFNA:APP:NFNA:APP:0301:0377
+FJ Nausori (Suva) Tower:Nausori Tower:119.600:N1:T:NFNA:TWR:NFNA:TWR:0301:0377
+;::::::::::
+;FJ Nadi ATIS:NFFN:127.900:NFFN:ATIS
+;FJ Nausori (Suva) ATIS:NFNA:128.500:NFNA:ATIS
+;::::::::::
+;    NEW CALEDONIA FIR::::::::::
+;::::::::::
+NC Noumea Approach:Tontouta Approach:128.300:WW:A:NWWW:APP:NWWW:APP:0501:0577
+NC Noumea Tower:Tontouta Tower:118.100:W3:T:NWWW:TWR:NWWW:TWR:0501:0577
+NC Magenta Tower:Magenta Tower:118.300:MW:T:NWWM:TWR:NWWM:TWR:1501:1577
+;::::::::::
+;NC Noumea ATIS:NWWW:126.200:NWWW:ATIS
+;NC Magenta ATIS:NWWM:126.600:NWWM:ATIS
+;::::::::::
+;    MARSHAL ISLANDS::::::::::
+;::::::::::
+KWA Kwajalein Approach:Kwaj Approach:126.200:PJ:A:PKWA:APP:PKWA:APP:0601:0677
+KWA Bucholz Tower:Bucholz Tower:118.800:PK:T:PKWA:TWR:PKWA:TWR:0601:0677
+KWA Bucholz SMC:Bucholz Ground:121.900:W4:-:PKWA:GND:PKWA:GND:0601:0677
+;KWA Bucholz ATIS:PKWA:119.500:PKWA:ATIS
+;::::::::::
+;    VANUATU FIR::::::::::
+;::::::::::
+VU Port Vila Centre:Vila Centre:120.700:VV:C:NVVV:CTR:NVVV:CTR:3001:3077
+VU Port Vila Tower:Vila Tower:118.300:VT:T:NVVV:TWR:NVVV:TWR:3001:3077
+;::::::::::
+;VU Port Villa ATIS:NVVV:126.400:NVVV:ATIS
+;::::::::::
+;  French Polynesia;;;;;;;;;
+;;;;;;;;;;;;;
+;Commented out as part of VATNZ airspace
+;PF Tahiti Approach:Tahiti Approach:121.300:PX:A:NTAA:APP:NTAA:APP:401:477
+;PF Tahiti Tower:Tahiti Tower:118.100:PY:T:NTAA:TWR:NTAA:TWR:401:477
+;PF Tahiti SMC:Tahiti Ground:121.900:PZ:G:NTAA:GND:NTAA:GND:401:477
+;PF Bora Bora Tower:Bora Bora Tower:118.900:B1:T:NTTB:TWR:NTTB:TWR:301:377
+;PF Raiatea Tower:Raiatea Tower:118.500:RT:T:NTTR:TWR:NTTR:TWR:201:277
+;PF Huahine Tower:Huahine Tower:119.300:HT:T:NTTH:TWR:NTTH:TWR:101:177
+;PF Moorea Tower:Moorea Tower:118.700:M2:T:NTTM:TWR:NTTM:TWR:501:577
+;PF Rangiroa Tower:Rangiroa Tower:118.300:RN:T:NTTG:TWR:NTTG:TWR:601:677
+;;;;;;;;;;;;;
+;Extra A in ATIS to exclude from list
+;PF Tahiti ATIS:NTAA:128.800:NTAA:AATIS
+;
+;::::::::::
+;  Solomon Islands;;;;;;;;;
+;;;;;;;;;;;
+;Commented out as is an advisory frequency in Class G airspace
+;SB Honiara Radio:Honiara Radio:118.100:HR:I:AGGH:RAD:AGGH:RAD:-:-
+
+;::::::::::
+;  VatSys adjoining FIRs
+;;;;;;;;;;;
+Ujung Pandang East#:Ujung Pandang Control:132.500:V1:C:WAAF_E:CTR:WAAF_E:CTR:0000:0000
+Ujung Pandang Bali#:Ujung Pandang Control:120.700:V2:C:WAAF_B:CTR:-:-:0000:0000
+Ujung Pandang#:Ujung Pandang Control:128.100:V3:C:WAAF:CTR:WAAF:CTR:0000:0000
+Ujung Pandang Training#:Ujung Pandang Control:128.100:W9:C:WAAF_T:CTR:WAAF_T:CTR:0000:0000
+Jakarta East#: Jakarta Control:120.900:V4:C:WIIF_E:CTR:WIIF_E:CTR:0000:0000
+Jakarta West#: Jakarta Control:135.900:V5:C:WIIF_W:CTR:WIIF_W:CTR:0000:0000
+Jakarta#: Jakarta Control:132.300:V6:C:WIIF:CTR:WIIF:CTR:0000:0000
+Jakarta Training#: Jakarta Control:132.300:W6:C:WIIF_T:CTR:WIIF_T:CTR:0000:0000
+Colombo#:Colombo Centre:124.900:V7:C:VCCF:CTR:VCCF:CTR:0000:0000
+Colombo Training#:Colombo Centre:124.900:W0:C:VCCF_T:CTR:VCCF_T:CTR:0000:0000
+Male#:Male Centre:123.900:V8:C:VRMF:CTR:VRMF:CTR:0000:0000
+Male Training#:Male Centre:123.900:W8:C:VRMF_T:CTR:VRMF_T:CTR:0000:0000
+Johannesburg Oceanic#:Johannesburg Radio:120.850:V9:O:FAJO:FSS:FAJO:FSS:0000:0000
+Mauritius#:Mauritius Centre:129.300:V0:C:FIMM:CTR:FIMM:CTR:0000:0000
+South Africa Upper#:Africa South Control:134.570:A3:C:AFRS:FSS:AFRS:FSS:0000:0000
+South East Asia Upper#:South East Asia Control:135.350:A0:C:ASEA:FSS:ASEA:FSS:0000:0000
+West Asia Upper#:West Asia Control:135.400:AW:C:ASIA_W:FSS:ASIA_W:FSS:0000:0000
+;<============ END OF FILE ============>::::::::::

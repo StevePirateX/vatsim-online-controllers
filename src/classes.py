@@ -47,3 +47,17 @@ class AfvClient:
         for client in AfvClient.afv_clients:
             if client[0] == callsign:
                 return client[1], client[2]
+
+
+class AtcPosition:
+    atc_positions = []
+
+    def __init__(self, callsign, name):
+        self.callsign = callsign
+        self.name = name
+
+        AtcPosition.atc_positions.append(self)
+
+    @staticmethod
+    def get_atc_positions():
+        return AtcPosition.atc_positions
