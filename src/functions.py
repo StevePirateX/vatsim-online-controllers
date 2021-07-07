@@ -1,4 +1,5 @@
 import constants
+from classes import AfvClient
 import os
 import configparser
 import random
@@ -7,6 +8,7 @@ import requests
 import datetime
 
 afv_refresh_time = datetime.datetime.now()
+
 
 def import_config(filename: str) -> None:
     """
@@ -74,7 +76,6 @@ def get_json_from_url(url: str) -> json:
 
 
 def add_controller_coordinates(afv_json: json) -> None:
-    afv_controllers = []
     for client in afv_json:
         callsign = client.get('callsign')
         if callsign[-3:] in constants.CONTROLLER_SUFFIXES:
@@ -85,5 +86,4 @@ def add_controller_coordinates(afv_json: json) -> None:
                 if agl < 50:
                     latitude = transceiver['latDeg']
                     longitude = transceiver['lonDeg']
-                    print('{} location is {}, {}'.format(callsign, latitude, longitude))
-
+                    AfvClient(callsign, latitude, longitude, agl)

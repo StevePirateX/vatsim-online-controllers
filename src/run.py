@@ -1,4 +1,5 @@
 import functions as f
+from classes import AfvClient
 
 if __name__ == "__main__":
     f.import_config("config.ini")
@@ -7,3 +8,5 @@ if __name__ == "__main__":
 
     afv_data = f.get_json_from_url(afv_api)
     f.add_controller_coordinates(afv_data)
+    print("ML-WOL_CTR position: ",
+          AfvClient.get_callsign_position('ML-WOL_CTR'))
