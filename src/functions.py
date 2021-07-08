@@ -130,7 +130,6 @@ def get_atc_positions() -> list:
     for index, line in enumerate(lines):
         if line.__contains__('adjoining FIRs'):
             adjoining_fir_lines = index
-            print("Adjoining FIR = {}".format(adjoining_fir_lines))
 
     for index, line in enumerate(lines):
         if ';' not in line and line != '\n' and index < adjoining_fir_lines:

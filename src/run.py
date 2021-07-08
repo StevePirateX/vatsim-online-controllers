@@ -15,12 +15,15 @@ def refresh_loop(afv_counter: int):
     f.add_controller_coordinates(afv_data)
     print("Currently online controllers:")
     f.get_vatsim_controllers()
+    controllers_online = 0
     for controller in VatsimController.vatsim_atc:
         location = controller.get_position()
         is_in_defined_airpsace = f.is_point_in_polygon(location)
         if is_in_defined_airpsace or controller.callsign in atc_positions:
+            controllers_online += 1
             print(controller.callsign, controller.name, location)
-
+    if controllers_online == 0:
+        print("Currently no controllers online")
     VatsimController.clean_controllers()
 
 
