@@ -13,17 +13,27 @@ def refresh_loop(afv_counter: int):
     print("Refresh time: {}".format(datetime.now().isoformat()[:-7]))
     VatsimController.copy_controllers()
     f.add_controller_coordinates(afv_data)
-    print("Currently online controllers:")
+    print("Online controllers:")
     f.get_vatsim_controllers()
-    controllers_online = 0
+
+    local_online_controllers = []
+    callsign_max_length = 0
     for controller in VatsimController.vatsim_atc:
         location = controller.get_position()
         is_in_defined_airpsace = f.is_point_in_polygon(location)
         if is_in_defined_airpsace or controller.callsign in atc_positions:
-            controllers_online += 1
-            print(controller.callsign, controller.name, location)
-    if controllers_online == 0:
-        print("Currently no controllers online")
+            local_online_controllers.append(controller)
+            if len(controller.callsign) > callsign_max_length:
+                callsign_max_length = len(controller.callsign)
+
+    if len(local_online_controllers) > 0:
+        local_online_controllers.sort(key=lambda x: x.callsign)
+        for controller in local_online_controllers:
+            print('{0:{1}}'.format(controller.callsign, callsign_max_length),
+                  '-',
+                  controller.name)
+    else:
+        print("No controllers found")
     VatsimController.clean_controllers()
 
 
