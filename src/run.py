@@ -29,9 +29,14 @@ def refresh_loop(afv_counter: int):
     if len(local_online_controllers) > 0:
         local_online_controllers.sort(key=lambda x: x.callsign)
         for controller in local_online_controllers:
+            session_time = controller.get_session_time()
+            hours = str(session_time[0]).zfill(2)
+            minutes = str(session_time[1]).zfill(2)
             print('{0:{1}}'.format(controller.callsign, callsign_max_length),
                   '-',
-                  controller.name)
+                  '{0:20}'.format(controller.name),
+                  '{}:{}'.format(hours, minutes),
+                  )
     else:
         print("No controllers found")
     VatsimController.clean_controllers()
