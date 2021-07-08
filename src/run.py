@@ -27,6 +27,11 @@ def refresh_loop(afv_counter: int):
                 callsign_max_length = len(controller.callsign)
 
     if len(local_online_controllers) > 0:
+        print('{0:{1}}'.format("Callsign", callsign_max_length),
+              ' ',
+              '{0:20}'.format("Name"),
+              '{}'.format("Online Time"),
+              )
         local_online_controllers.sort(key=lambda x: x.callsign)
         for controller in local_online_controllers:
             session_time = controller.get_session_time()
