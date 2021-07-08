@@ -35,10 +35,8 @@ def import_config(filename: str) -> None:
                      '{!r}'.format(constants.POLYGON))
 
         config_w.add_section('Audio For VATSIM')
-        config_w.set('Audio For VATSIM', 'api_server',
-                     constants.AFV_API_SERVER)
-        config_w.set('Audio For VATSIM', 'api_server_backup',
-                     constants.AFV_API_SERVER_BACKUP)
+        config_w.set('Audio For VATSIM', 'api_servers', "{!r}".format(
+            constants.AFV_API_SERVERS))
         config_w.set('Audio For VATSIM', 'api_version',
                      constants.AFV_API_VERSION)
         config_w.set('Audio For VATSIM', 'api_post_url',
@@ -58,10 +56,9 @@ def import_config(filename: str) -> None:
         constants.POLYGON = ast.literal_eval(
             config_r.get('General', 'controller_filter_area'))
         constants.AREA = mplpath.Path(constants.POLYGON)
-        constants.AFV_API_SERVER = config_r.get('Audio For VATSIM',
-                                                'api_server')
-        constants.AFV_API_SERVER_BACKUP = config_r.get('Audio For VATSIM',
-                                                       'api_server_backup')
+        constants.AFV_API_SERVERS = ast.literal_eval(
+            config_r.get('Audio For VATSIM',
+                         'api_servers'))
         constants.AFV_API_VERSION = config_r.get('Audio For VATSIM',
                                                  'api_version')
         constants.AFV_API_POST_URL = config_r.get('Audio For VATSIM',
@@ -69,18 +66,13 @@ def import_config(filename: str) -> None:
 
 
 def get_afv_url() -> str:
-    server_selection = random.randint(1, 2)
+    server_selection = random.randint(0, len(constants.AFV_API_SERVERS) - 1)
 
-    if server_selection == 1:
-        domain = constants.AFV_API_SERVER
-    elif server_selection == 2:
-        domain = constants.AFV_API_SERVER_BACKUP
-    else:
-        domain = constants.AFV_API_SERVER
+    server = constants.AFV_API_SERVERS[server_selection]
     version = constants.AFV_API_VERSION
     post_url = constants.AFV_API_POST_URL
 
-    request_url = f"{domain}/v{version}/{post_url}"
+    request_url = f"https://{server}/api/v{version}/{post_url}"
     return request_url
 
 
