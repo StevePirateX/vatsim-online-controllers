@@ -65,6 +65,8 @@ if __name__ == "__main__":
     f.import_config(c.CONFIG_FILENAME)
     log_print('Config loaded')
     afv_api_url = f.get_afv_url()
+    # afv_data = f.get_json_from_url(afv_api_url)
+    # log_print('AFV data loaded')
     atc_positions = f.get_atc_positions()
     log_print('POF file loaded')
 
