@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 
 
 class VatsimController:
@@ -19,7 +19,7 @@ class VatsimController:
         self.server = server
         self.visual_range = visual_range
         self.logon_time = logon_time
-        self.logon_time_iso = datetime.datetime.fromisoformat(self.logon_time[:19])
+        self.logon_time_iso = datetime.fromisoformat(self.logon_time[:19])
 
         if len(self.name) > VatsimController.max_name_length:
             VatsimController.max_name_length = len(self.name)
@@ -44,15 +44,15 @@ class VatsimController:
         return position
 
     def get_session_time(self):
-        current_time = datetime.datetime.utcnow()
+        current_time = datetime.utcnow()
         session_start = self.logon_time_iso
         # print("Current time = ", current_time)
         # print("Session Start = ", session_start)
         difference = current_time - session_start
         minutes_in_day = 24 * 60
-        div_mod = divmod(difference.days * minutes_in_day + difference.seconds // 60, 60)
+        div_mod = divmod(
+            difference.days * minutes_in_day + difference.seconds // 60, 60)
         return div_mod
-
 
     @staticmethod
     def copy_controllers():
@@ -70,7 +70,7 @@ class VatsimController:
                     break
             if not is_callsign_still_active:
                 VatsimController.vatsim_atc.remove(old_controller)
-        VatsimController.vatsim_atc_old.clear()
+        VatsimController.vatsim_atc.clear()
 
 
 class AfvClient:
