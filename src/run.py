@@ -28,6 +28,7 @@ def refresh_loop(fetch_afv: bool):
 
     local_online_controllers = []
     callsign_max_length = 0
+    name_max_length = 0
     for controller in VatsimController.vatsim_atc:
         location = controller.get_position()
         is_in_defined_airpsace = f.is_point_in_polygon(location)
@@ -35,19 +36,22 @@ def refresh_loop(fetch_afv: bool):
             local_online_controllers.append(controller)
             if len(controller.callsign) > callsign_max_length:
                 callsign_max_length = len(controller.callsign)
+            if len(controller.name) > name_max_length:
+                name_max_length = len(controller.name)
 
     if len(local_online_controllers) > 0:
-        header = '{0:{1}} {2:20} {3}'.format('Callsign', callsign_max_length,
-                                             'Name', 'Online Time')
+        header = '{0:{1}} {2:{3}} {4}'.format('Callsign', callsign_max_length,
+                                              'Name', name_max_length,
+                                              'Online Time')
         log_print(header)
         local_online_controllers.sort(key=lambda x: x.callsign)
         for controller in local_online_controllers:
             session_time = controller.get_session_time()
             hours = str(session_time[0]).zfill(2)
             minutes = str(session_time[1]).zfill(2)
-            controller_output = '{0:{1}} - {2:20} {3}:{4}'.format(
+            controller_output = '{0:{1}} {2:{3}} {4}:{5}'.format(
                 controller.callsign, callsign_max_length, controller.name,
-                hours, minutes)
+                name_max_length, hours, minutes)
             log_print(controller_output)
     else:
         log_print("No controllers found")
