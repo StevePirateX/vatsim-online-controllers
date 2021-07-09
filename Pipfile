@@ -4,6 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+requests = "==2.25.1"
+matplotlib = "==3.4.0"
+numpy = "==1.21.0"
 
 [dev-packages]
 
