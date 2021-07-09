@@ -45,7 +45,7 @@ def refresh_loop(fetch_afv: bool):
             session_time = controller.get_session_time()
             hours = str(session_time[0]).zfill(2)
             minutes = str(session_time[1]).zfill(2)
-            controller_output = '{0:{1}} - {2:20} {3}:{4}'.format(
+            controller_output = '{0:{1}} {2:20} {3}:{4}'.format(
                 controller.callsign, callsign_max_length, controller.name,
                 hours, minutes)
             log_print(controller_output)
