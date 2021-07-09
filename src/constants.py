@@ -11,6 +11,7 @@ REFRESH_TIME = 20       # Seconds
 AFV_API_SERVERS = ["voice1.vatsim.uk", "voice2.vatsim.uk"]
 AFV_API_VERSION = "1"
 AFV_API_POST_URL = "network/online/callsigns"
+AFV_REFRESH_RATE = 90   # Seconds
 
 CONTROLLER_SUFFIXES = {"DEL", "GND", "TWR", "APP", "DEP", "CTR", "FSS"}
 

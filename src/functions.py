@@ -140,3 +140,7 @@ def get_atc_positions() -> list:
             atc_positions.append(callsign)
 
     return atc_positions
+
+
+def average_run_calc(total_loop_time, total_runs) -> float:
+    return round(total_loop_time / total_runs, 3)

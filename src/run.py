@@ -9,10 +9,14 @@ loop_end_time = 0
 afv_data = None
 
 
+def log_print(label: str):
+    print('{}: {}'.format(datetime.now().strftime('%H:%M:%S.%f')[:12], label))
+
+
 def refresh_loop(fetch_afv: bool):
     global afv_data
     global loop_end_time
-    if fetch_afv or afv_data is None:
+    if fetch_afv:
         log_print('Fetching AFV Data')
         afv_data = f.get_json_from_url(f.get_afv_url())
     log_print('Fetching VATSIM Data')
@@ -51,14 +55,6 @@ def refresh_loop(fetch_afv: bool):
     loop_end_time = time.time()
 
 
-def log_print(label: str):
-    print('{}: {}'.format(datetime.now().strftime('%H:%M:%S.%f')[:12], label))
-
-
-def average_run_calc(total_loop_time, total_runs) -> float:
-    return round(total_loop_time / total_runs, 3)
-
-
 if __name__ == "__main__":
     log_print('Starting')
     log_print("VATSIM Online Controllers v{}".format(c.VERSION))
@@ -84,20 +80,22 @@ if __name__ == "__main__":
             print()
             log_print('Refreshing...')
             loop_start_time = time.time()
-            if afv_update_counter % 3 == 0:
+            if c.AFV_REFRESH_RATE < c.REFRESH_TIME * afv_update_counter \
+                    or afv_data is None:
+                afv_update_counter = 0
                 refresh_loop(True)
                 afv_refreshes += 1
                 afv_total_run_time += round(loop_end_time - loop_start_time, 3)
-                afv_avg_refresh = average_run_calc(afv_total_run_time,
-                                                   afv_refreshes)
+                afv_avg_refresh = f.average_run_calc(afv_total_run_time,
+                                                     afv_refreshes)
             else:
+                afv_update_counter += 1
                 refresh_loop(False)
                 nonafv_refreshes += 1
                 nonafv_total_run_time += round(loop_end_time - loop_start_time,
                                                3)
-                nonafv_avg_refresh = average_run_calc(nonafv_total_run_time,
-                                                      nonafv_refreshes)
-            afv_update_counter += 1
+                nonafv_avg_refresh = f.average_run_calc(nonafv_total_run_time,
+                                                        nonafv_refreshes)
             loop_running_time = round(loop_end_time - loop_start_time, 3)
             log_print('Refresh run time = {}s'.format(loop_running_time))
             log_print('Average refresh time w/o AFV = {}s'.format(

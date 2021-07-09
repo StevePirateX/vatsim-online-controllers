@@ -46,8 +46,6 @@ class VatsimController:
     def get_session_time(self):
         current_time = datetime.utcnow()
         session_start = self.logon_time_iso
-        # print("Current time = ", current_time)
-        # print("Session Start = ", session_start)
         difference = current_time - session_start
         minutes_in_day = 24 * 60
         div_mod = divmod(
