@@ -1,8 +1,8 @@
 # VATSIM Online Controllers
 
-![Version](https://img.shields.io/github/manifest-json/v/stevepiratex/vatsim-online-controllers)
-![License](https://img.shields.io/github/license/stevepiratex/vatsim-online-controllers)
-![Python Version](https://img.shields.io/github/pipenv/locked/python-version/stevepiratex/vatsim-online-controllers)
+![Version](https://img.shields.io/github/v/release/StevePirateX/vatsim-online-controllers?include_prereleases)
+![License](https://img.shields.io/github/license/StevePirateX/vatsim-online-controllers)
+![Python Version](https://img.shields.io/github/pipenv/locked/python-version/StevePirateX/vatsim-online-controllers)
 
 This uses a conbination of both the live VATSIM data feed and the AFV API
 
