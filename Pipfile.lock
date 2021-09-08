@@ -181,7 +181,7 @@
                 "sha256:ff04c373477723430dce2e9d024c708a047d44cf17166bf16e604b379bf0ca14"
             ],
             "markers": "python_version >= '3.6'",
-            "version": "==8.3.1"
+            "version": "==8.3.2"
         },
         "pyparsing": {
             "hashes": [
